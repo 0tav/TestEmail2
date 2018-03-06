@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">TestEmail2</string>
+
+    <string name="compose_email">Compose email</string>
+
+    <string name="sent_edit_title_new_mail">Compose Mail</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="hint_to">To:</string>
+    <string name="hint_subject">Subject:</string>
+    <string name="hint_email_desc">Write Here...</string>
+
+    <string name="sent_insert_mail_successfull">Email sent</string>
+    <string name="sent_insert_mail_failed">Error sent email</string>
+
+    <string name="no_mail">No Email</string>
+
+    <string name="sent_edit_title_edit_mail">Edit Mail</string>
+
+    <string name="empty_mail">You have no email</string>
+
+    <string name="sent_edit_mail_successfull">Email edit sent</string>
+    <string name="sent_edit_mail_failed">Error sent edit email</string>
+
+    <string name="unsent_changes_dialog_msg">Discard your changes and quit write email</string>
+
+    <string name="discard">Discard</string>
+
+    <string name="delete">Delete</string>
+    <string name="delete_all_mail">Delete All Mail</string>
+
+    <string name="keep_editing">Keep editing</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="sent_delete_mail_successfull">Email deleted</string>
+    <string name="sent_delete_mail_failed">Error deleting email</string>
+
+    <string name="delete_dialog_msg">Delete this mail?</string>
+    <string name="delete_all_dialog_msg">Delete all mail></string>
+
+    <string name="no_subject">No Subject</string>
+
+    <string name="invalid_email">Invalid Email</string>
+
+
+
+</resources>

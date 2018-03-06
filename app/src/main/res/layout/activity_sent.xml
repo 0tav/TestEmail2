@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mail_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mail_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/mail_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/no_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/no_mail_icon"
+            android:layout_width="@dimen/fragment_mail_iv"
+            android:layout_height="@dimen/fragment_mail_iv"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_email_turned_in_24dp"/>
+
+        <TextView
+            android:id="@+id/no_mail_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/empty_mail"
+            android:layout_marginBottom="@dimen/list_item_padding"/>
+
+        <TextView
+            android:id="@+id/no_mail_add"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fragment_mail_iv"
+            android:layout_gravity="center"
+            android:background="@drawable/touch_feedback"
+            android:gravity="center"
+            android:text="@string/compose_email"/>
+
+    </LinearLayout>
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_compose_mail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fab_margin"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/ic_add"
+    app:fabSize="normal" />
+
+</RelativeLayout>

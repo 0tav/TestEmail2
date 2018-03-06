@@ -1,0 +1,33 @@
+ext {
+    minSdkVersion = 17
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.2"
+
+    //Android
+    androidSupportVersion = "26.0.2"
+    navigationTabBar = "1.2.5"
+
+    //Testing
+    junitVersion = "4.12"
+    espressoVersion = "3.0.1"
+    supportTestVersion = "1.0.1"
+
+    libraries = [
+            androidSupport : "com.android.support:support-v4:${androidSupportVersion}",
+            appCompat : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            designSupport : "com.android.support:design:${androidSupportVersion}",
+            vectorSupport : "com.android.support:support-vector-drawable:${androidSupportVersion}",
+            recyclerView : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            cardView : "com.android.support:cardview-v7:${androidSupportVersion}",
+            supportAnnotation : "com.android.support:support-annotations:${androidSupportVersion}",
+            navigationTabBar : "devlight.io:navigationtabbar:${navigationTabBar}",
+    ]
+
+    testLibraries = [
+            junit : "junit:junit:${junitVersion}",
+            supportTestRunner : "com.android.support.test:runner:${supportTestVersion}",
+            espressoCore : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+
+    ]
+
+}

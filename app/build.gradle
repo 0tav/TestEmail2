@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.ireos.testemail2"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.libraries.appCompat
+    implementation rootProject.ext.libraries.androidSupport
+    implementation rootProject.ext.libraries.designSupport
+    implementation rootProject.ext.libraries.vectorSupport
+    implementation rootProject.ext.libraries.recyclerView
+    implementation rootProject.ext.libraries.cardView
+    implementation rootProject.ext.libraries.navigationTabBar
+
+
+    implementation rootProject.ext.libraries.supportAnnotation
+
+    testImplementation rootProject.ext.testLibraries.junit
+
+    androidTestImplementation rootProject.ext.testLibraries.supportTestRunner
+
+    androidTestImplementation rootProject.ext.testLibraries.espressoCore
+}
