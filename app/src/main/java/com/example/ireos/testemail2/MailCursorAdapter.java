@@ -28,8 +28,8 @@ public class MailCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvSubject = (TextView) view.findViewById(R.id.subject);
-        TextView tvEmailTo = (TextView) view.findViewById(R.id.email_to);
+        TextView tvSubject = (TextView) view.findViewById(R.id.tv_subject);
+        TextView tvEmailTo = (TextView) view.findViewById(R.id.tv_email_to);
 
         int subjectindex = cursor.getColumnIndex(MailContract.MailEntry.COLUMN_EMAIL_SUBJECT);
         int emailToIndex = cursor.getColumnIndex(MailContract.MailEntry.COLUMN_EMAIL_TO);

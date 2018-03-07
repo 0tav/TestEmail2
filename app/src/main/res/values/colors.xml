@@ -6,4 +6,6 @@
 
     <color name="favoriteMailBackground">#FFD180</color>
     <color name="touchFeedback">#CFD8DC</color>
+
+    <color name="ic_launcher_background">#FFF8E1</color>
 </resources>

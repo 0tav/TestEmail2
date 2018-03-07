@@ -9,7 +9,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="item_sent_linear_layout">
+    <style name="ItemSentLinearLayout">
         <item name="android:background">@drawable/touch_feedback</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>

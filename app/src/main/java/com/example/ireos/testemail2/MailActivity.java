@@ -3,7 +3,6 @@ package com.example.ireos.testemail2;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,8 +26,6 @@ public class MailActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public static final String LOG_TAG = MailActivity.class.getSimpleName();
 
-    private Uri mCurrentMailUri;
-
     private static final int MAIL_LOADER = 0;
     private MailCursorAdapter mCursorAdapter;
 
@@ -41,14 +38,13 @@ public class MailActivity extends AppCompatActivity implements LoaderManager.Loa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MailActivity.this, SentEditActivity.class);
-                startActivity(intent);
+                composeEmail();
             }
         });
 
-        ListView mailListView = (ListView) findViewById(R.id.mail_list);
+        ListView mailListView = (ListView) findViewById(R.id.lv_mail);
 
-        View emptyView = findViewById(R.id.no_mail);
+        View emptyView = findViewById(R.id.ll_no_mail);
         mailListView.setEmptyView(emptyView);
 
         mCursorAdapter = new MailCursorAdapter(this, null);
@@ -57,13 +53,7 @@ public class MailActivity extends AppCompatActivity implements LoaderManager.Loa
         mailListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MailActivity.this, SentEditActivity.class);
-
-                Uri currentUri = ContentUris.withAppendedId(MailEntry.CONTENT_URI, id);
-
-                intent.setData(currentUri);
-
-                startActivity(intent);
+                editEmail(id);
             }
         });
 
@@ -77,6 +67,21 @@ public class MailActivity extends AppCompatActivity implements LoaderManager.Loa
 
         getLoaderManager().initLoader(MAIL_LOADER, null, this);
 
+    }
+
+    private void composeEmail(){
+        Intent intent = new Intent(MailActivity.this, SentEditActivity.class);
+        startActivity(intent);
+    }
+
+    private void editEmail(long id){
+        Intent intent = new Intent(MailActivity.this, SentEditActivity.class);
+
+        Uri currentUri = ContentUris.withAppendedId(MailEntry.CONTENT_URI, id);
+
+        intent.setData(currentUri);
+
+        startActivity(intent);
     }
 
     private void showDeleteAllConfirmationDialog(){

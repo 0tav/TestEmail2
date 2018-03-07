@@ -61,9 +61,9 @@ public class SentEditActivity extends AppCompatActivity implements LoaderManager
             getLoaderManager().initLoader(EXISTING_MAIL_LOADER, null, this);
         }
 
-        mEmailToEditText = (EditText) findViewById(R.id.add_mail_to);
-        mEmailSubjectEditText = (EditText) findViewById(R.id.add_mail_subject);
-        mEmailBodyEditText = (EditText) findViewById(R.id.add_mail_desc);
+        mEmailToEditText = (EditText) findViewById(R.id.iet_add_mail_to);
+        mEmailSubjectEditText = (EditText) findViewById(R.id.iet_add_mail_subject);
+        mEmailBodyEditText = (EditText) findViewById(R.id.et_add_mail_desc);
 
         mEmailToEditText.setOnTouchListener(mTouchListener);
         mEmailSubjectEditText.setOnTouchListener(mTouchListener);
@@ -223,11 +223,11 @@ public class SentEditActivity extends AppCompatActivity implements LoaderManager
         }
 
         if (cursor.moveToFirst()){
-            int emaiToIndex = cursor.getColumnIndex(MailEntry.COLUMN_EMAIL_TO);
+            int emailToIndex = cursor.getColumnIndex(MailEntry.COLUMN_EMAIL_TO);
             int emailSubjectIndex = cursor.getColumnIndex(MailEntry.COLUMN_EMAIL_SUBJECT);
             int emailBodyIndex = cursor.getColumnIndex(MailEntry.COLUMN_EMAIL_BODY);
 
-            String to = cursor.getString(emaiToIndex);
+            String to = cursor.getString(emailToIndex);
             String subject = cursor.getString(emailSubjectIndex);
             String desc = cursor.getString(emailBodyIndex);
 

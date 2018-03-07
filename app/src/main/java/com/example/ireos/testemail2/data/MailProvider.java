@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.ireos.testemail2.data.MailContract.*;
@@ -84,7 +85,7 @@ public class MailProvider extends ContentProvider {
     private Uri insertMail(Uri uri, ContentValues values){
 
         String emailTo = values.getAsString(MailEntry.COLUMN_EMAIL_TO);
-        if (emailTo == null){
+        if (TextUtils.isEmpty(emailTo)){
             throw new IllegalArgumentException("Requires a email");
         }
 
@@ -121,7 +122,7 @@ public class MailProvider extends ContentProvider {
                            String selection, String[] selectionArgs){
         if (values.containsKey(MailEntry.COLUMN_EMAIL_TO)){
             String emailTo = values.getAsString(MailEntry.COLUMN_EMAIL_TO);
-            if (emailTo == null){
+            if (TextUtils.isEmpty(emailTo)){
                 throw new IllegalArgumentException("Requires email");
             }
         }
